@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+      h1 {
+        position: absolute;
+        top: 5px;
+        font-size: 80px;
+        color: #ffffffa9;
+        text-align: center;
+        width: 100vw;
+      }
+
+      body {
+        background-image: url("./leaf.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        margin-top: 30px;
+        background-color: #ffffffff;
+        opacity: 70%;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        height: 470px;
+        text-align: center;
+        margin-top: 10%;
+      }
+
+      .tab {
+        cursor: pointer;
+        font-size: 20px;
+        padding: 0;
+        margin-bottom: 15px;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.3s;
+      }
+
+      .form {
+        display: block;
+      }
+
+      .form input {
+        width: 85%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      .form button {
+        width: 70%;
+        padding: 12px;
+        background-color: #007bff;
+        border: none;
+        border-radius: 20px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-bottom: 7px;
+      }
+
+      .form button:hover {
+        background-color: #0056b3;
+      }
+
+      .link {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 14px;
+      }
+
+      .link a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .link a:hover {
+        text-decoration: underline;
+      }
+
+      .bx {
+        position: relative;
+      }
+    </style>
+
+    <!--to load icons-->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>PATIENT MANAGEMENT SYSTEM</h1>
+    <div class="container">
+      <div class="tab">Sign Up</div>
+
+      <div class="form active" id="patient">
+        <input type="text" placeholder="First Name" required />
+        <input type="text" placeholder="Last Name" required />
+        <input type="email" placeholder="Email" required />
+        <input
+          type="tel"
+          id="phone"
+          placeholder="Phone number"
+          pattern="[0-9]{5}-[0-9]{5}"
+          required
+        />
+        <input type="text" placeholder="Username" required />
+
+        <input type="password" placeholder="Password" required />
+
+        <button>Sign up</button>
+        <div class="link">
+          <p>Already have an account? <a href="./login.html">Login</a></p>
+        </div>
+      </div>
+    </div>
+
+    <script></script>
+  </body>
+</html>

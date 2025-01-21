@@ -10,7 +10,10 @@
         top: 5px;
         font-size: 80px;
         color: #ffffffa9;
+        text-align: center;
+        width: 100vw;
       }
+
       body {
         background-image: url("./leaf.jpg");
         background-size: cover;
@@ -53,6 +56,7 @@
 
       .tab {
         cursor: pointer;
+        font-size: 17px;
         padding: 10px;
         border-bottom: 2px solid transparent;
         transition: border-color 0.3s;
@@ -116,7 +120,12 @@
       .bx {
         position: relative;
       }
+
+      .tabs.hidden {
+        display: none;
+      }
     </style>
+
     <!--to load icons-->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -141,7 +150,7 @@
 
         <button>Login</button>
         <div class="link">
-          <p>Don't have an account? <a href="#">Sign Up</a></p>
+          <p>Don't have an account? <a href="./signup.html">Sign Up</a></p>
         </div>
       </div>
 
