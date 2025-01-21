@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Page</title>
+    <title>Signup Page</title>
     <style>
       h1 {
         position: absolute;
@@ -35,7 +35,7 @@
         padding: 30px;
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        width: 400px;
+        width: 500px;
         height: 470px;
         text-align: center;
         margin-top: 10%;
@@ -45,7 +45,7 @@
         cursor: pointer;
         font-size: 20px;
         padding: 0;
-        margin-bottom: 15px;
+        margin-bottom: 25px;
         border-bottom: 2px solid transparent;
         transition: border-color 0.3s;
       }
@@ -95,8 +95,26 @@
         text-decoration: underline;
       }
 
-      .bx {
-        position: relative;
+      #first-name {
+        display: inline-block;
+        width: 45%;
+      }
+
+      #last-name {
+        display: inline-block;
+        width: 45%;
+      }
+      .form-row {
+        display: flex;
+        gap: 10px; /* Space between fields */
+        margin-bottom: 7px;
+      }
+      .form-row input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
       }
     </style>
 
@@ -112,9 +130,17 @@
       <div class="tab">Sign Up</div>
 
       <div class="form active" id="patient">
-        <input type="text" placeholder="First Name" required />
-        <input type="text" placeholder="Last Name" required />
-        <input type="email" placeholder="Email" required />
+        <div class="form-row">
+          <input
+            type="text"
+            placeholder="First Name"
+            id="first-name"
+            required
+          />
+          <input type="text" placeholder="Last Name" id="last-name" required />
+        </div>
+
+        <input type="email" placeholder="Email" id="email" required />
         <input
           type="tel"
           id="phone"
@@ -122,9 +148,15 @@
           pattern="[0-9]{5}-[0-9]{5}"
           required
         />
-        <input type="text" placeholder="Username" required />
+        <input type="text" placeholder="Username" id="username" required />
 
-        <input type="password" placeholder="Password" required />
+        <input type="password" placeholder="Password" id="pwd" required />
+        <input
+          type="password"
+          placeholder="Re-enter Password"
+          id="pwd-recheck"
+          required
+        />
 
         <button>Sign up</button>
         <div class="link">
