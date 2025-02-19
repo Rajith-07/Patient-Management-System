@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+      h1 {
+        position: absolute;
+        top: 5px;
+        font-size: 80px;
+        color: #ffffffa9;
+        text-align: center;
+        width: 100vw;
+      }
+
+      body {
+        background-image: url("./img/leaf.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        margin-top: 30px;
+        background-color: #ffffffff;
+        opacity: 70%;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        height: 320px;
+        text-align: center;
+      }
+
+      .logo {
+        margin-bottom: 20px;
+      }
+
+      .logo img {
+        width: 80px;
+      }
+
+      .tabs {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+      }
+
+      .tab {
+        cursor: pointer;
+        font-size: 17px;
+        padding: 10px;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.3s;
+      }
+
+      .tab.active {
+        border-color: #007bff;
+        font-weight: bold;
+        color: #007bff;
+      }
+
+      .form {
+        display: none;
+      }
+
+      .form.active {
+        display: block;
+      }
+
+      .form input {
+        width: 85%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      .form button {
+        width: 70%;
+        padding: 12px;
+        background-color: #007bff;
+        border: none;
+        border-radius: 20px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-bottom: 7px;
+      }
+
+      .form button:hover {
+        background-color: #0056b3;
+      }
+
+      .link {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 14px;
+      }
+
+      .link a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .link a:hover {
+        text-decoration: underline;
+      }
+
+      .bx {
+        position: relative;
+      }
+
+      .tabs.hidden {
+        display: none;
+      }
+    </style>
+
+    <!-- Load icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>PATIENT MANAGEMENT SYSTEM</h1>
+    <div class="container">
+      <div class="tabs">
+        <div class="tab active" data-target="patient">Patient</div>
+        <div class="tab" data-target="doctor">Doctor</div>
+        <div class="tab" data-target="admin">Admin</div>
+      </div>
+
+      <!-- Patient Form -->
+      <div class="form active" id="patient">
+        <form action="/" method="POST">
+          <input type="text" name="username" placeholder="Username" required />
+          <i class="bx bx-user"></i>
+          <input type="password" name="password" placeholder="Password" required />
+          <i class="bx bxs-lock-alt"></i>
+          <input type="hidden" name="role" value="Patient" />
+          <button type="submit">Login</button>
+          <div class="link">
+            <p>Don't have an account? <a href="./signup">Sign Up</a></p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Doctor Form -->
+      <div class="form" id="doctor">
+        <form action="/" method="POST">
+          <input type="text" name="username" placeholder="Username" required />
+          <i class="bx bx-user"></i>
+          <input type="password" name="password" placeholder="Password" required />
+          <i class="bx bxs-lock-alt"></i>
+          <input type="hidden" name="role" value="Doctor" />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+
+      <!-- Admin Form -->
+      <div class="form" id="admin">
+        <form action="/" method="POST">
+          <input type="text" name="username" placeholder="Username" required />
+          <i class="bx bx-user"></i>
+          <input type="password" name="password" placeholder="Password" required />
+          <i class="bx bxs-lock-alt"></i>
+          <input type="hidden" name="role" value="Admin" />
+          <button href='/dashboard' type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const tabs = document.querySelectorAll(".tab");
+      const forms = document.querySelectorAll(".form");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          // Remove active class from all tabs and forms
+          tabs.forEach((t) => t.classList.remove("active"));
+          forms.forEach((f) => f.classList.remove("active"));
+
+          // Add active class to the clicked tab and corresponding form
+          tab.classList.add("active");
+          document
+            .getElementById(tab.getAttribute("data-target"))
+            .classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
